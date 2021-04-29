@@ -1,5 +1,5 @@
 @echo off
-SET build=1.1
+SET build=1.2
 title Windows Photo Viewer v%BUILD%
 
 :checkPrivileges
@@ -37,13 +37,18 @@ Echo Setting default image type support
 Echo.
 :: You can copy these lines and insert other extensions. Just make sure there is a root key for them first.
 :: Remember that photo viewer might not be able to open all types of files. 
-reg.exe add "HKCU\Software\Classes\.jpg" /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
-reg.exe add "HKCU\Software\Classes\.jpeg" /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
-reg.exe add "HKCU\Software\Classes\.gif" /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
-reg.exe add "HKCU\Software\Classes\.png" /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
-reg.exe add "HKCU\Software\Classes\.bmp" /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
-reg.exe add "HKCU\Software\Classes\.tiff" /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
-reg.exe add "HKCU\Software\Classes\.ico" /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .jxr /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .jfif /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .jpe /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .jpg /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .jpeg /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .gif /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .png /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .bmp /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .tiff /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .ico /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .dib /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
+reg.exe add "HKLM\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations" /v .webp /T "REG_SZ" /D "PhotoViewer.FileAssoc.Tiff" /F >nul 2>&1
 Echo Done!
 Echo.
 pause
